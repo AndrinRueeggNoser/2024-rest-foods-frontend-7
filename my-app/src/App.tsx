@@ -3,7 +3,7 @@ import "./App.css";
 import HomePage from "./Component/pages/Homepage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Menupage from "./Component/pages/Menupage";
-import { Dashboard } from "@material-ui/icons";
+import  Dashboard from "./Component/pages/Dashboard";
 
 function App() {
   return (
