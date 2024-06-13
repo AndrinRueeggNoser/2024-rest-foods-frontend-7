@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 function Header() {
   return (
     <>
-      <AppBar position="static">
+    
         <Toolbar className="header">
           <div className="buttoncenter">
             <Button color="inherit"> Reservation </Button>
@@ -14,7 +14,6 @@ function Header() {
             <Button className="button">Login</Button>
           </div>
         </Toolbar>
-      </AppBar>
     </>
   );
 }

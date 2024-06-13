@@ -28,3 +28,32 @@ body {
    
 }
 
+.about {
+    color: black;
+    margin-left: 10%;
+    margin-top: 20%;
+    
+
+    
+
+ button{
+    background-color: black;
+    color: white;
+ }
+}
+
+.menu {
+    color: black;
+    margin-top: -10%;
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    
+
+    
+
+ button{
+    background-color: black;
+    color: white;
+ }
+}
