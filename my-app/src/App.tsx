@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<Menupage />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dishpreview" /*element={< />}*/ />
+          <Route path="/menu/:id" /*element={< />}*/ />
           <Route path="/reservation" /*element={<ReservationPage />}*/ />
         </Routes>
       </BrowserRouter>
