@@ -1,75 +1,151 @@
 .header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 98.3%;
-    height: 120px;
-    background-color: #DDD3D3;
-    color: black;
-    margin-top: -1%;
-    margin-left: -1%;
-  
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 98.3%;
+  height: 120px;
+  background-color: #c6bfbf;
+  color: black;
+  margin-top: -1%;
+  margin-left: -1%;
 
-
-    .button {
-        background-color: black;
-        color: white;
-    }
+  .button {
+    background-color: black;
+    color: white;
+  }
 }
 
 body {
-    background-color: white
+  background-color: rgb(255, 255, 255);
 }
 
 .buttoncenter {
-    display: block;
-    margin-left: 70%;
-    margin-right: auto;
-    width: 50%;
-   
+  display: block;
+  margin-left: 70%;
+  margin-right: auto;
+  width: 50%;
 }
 
-
-h1{
-   margin-left: 45%;
-   margin-top: 5%;
-   font-family: Arial, Helvetica, sans-serif;
+h1 {
+  margin-left: 40%;
+  margin-top: 5%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+.icon {
+  width: 20%;
+  margin: 0 auto;
+  display: block;
+}
 
 .about {
-    color: black;
-    margin-left: 10%;
-    margin-top: 10%;
-    font-family: Arial, Helvetica, sans-serif;
-    
+  color: black;
+  display: inline-block;
+  width: 50;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5%;
 
-    
-
- button{
+  button {
     background-color: black;
     color: white;
- }
+  }
 }
 
 .menu {
-    color: black;
-    margin-top: -10%;
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-    font-family: Arial, Helvetica, sans-serif;
-    
+  color: black;
+  position: absolute;
+  right: 0;
+  margin-right: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  margin-top: 5%;
 
-    
-
- button{
+  button {
     background-color: black;
     color: white;
- }
+  }
 }
 
 .houseicon {
-    margin-left: 0%;
-    width: 20%;
+  margin-left: 0%;
+  width: 20%;
+}
+
+.reservation {
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 6rem;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
+  margin-bottom: 0.35em;
+}
+
+h2 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+.contact-form {
+  max-width: 600px;
+
+  padding: 1em;
+}
+
+.contact-form p {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.contact-form textarea {
+  height: 100px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.contact-form button:hover {
+  background-color: #7f807f;
+}
+
+.names {
+  display: inline-block;
+  width: 20%;
+  margin-right: 2%;
+}
+
+.names:last-child {
+  margin-right: 0;
+}
+
+.p {
+  width: 20%;
+}
+
+p {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.tabletime {
+  display: inline-block;
+  width: 16.5%;
+  position: "absolute";
+  margin: 0 auto;
 }

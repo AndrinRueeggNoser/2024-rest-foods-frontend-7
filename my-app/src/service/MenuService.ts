@@ -1,4 +1,3 @@
-import { AxiosInstance } from "axios";
 import { defaultAxiosInstance } from "./MenuFetch";
 
 async function getDishes() {
@@ -9,7 +8,7 @@ async function getDishes() {
     console.log("API Response", response.data);
     return response.data;
   } catch (error) {
-    console.error("Error fetching dishes:", error);
+    console.error("Error");
     throw error;
   }
 }

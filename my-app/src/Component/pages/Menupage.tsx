@@ -15,13 +15,13 @@ function Menupage() {
   const [menu, setMenu] = useState<MenuProps[]>([]);
 
   useEffect(() => {
+    console.log("test2");
     MenuService.getDishes().then((data) => {
       setMenu(data);
-      console.log(menu);
       console.log(data);
     });
   }, []);
-  console.log("hhelo");
+
   return (
     <>
       <Header />
