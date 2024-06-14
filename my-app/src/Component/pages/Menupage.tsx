@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   Card,
@@ -8,23 +7,21 @@ import {
   Typography,
 } from "@mui/material";
 import Header from "./Elements/Header";
+import { useEffect, useState } from "react";
+import { MenuProps } from "../../MenuProps";
+import MenuService from "../../service/MenuService";
 
 function Menupage() {
-  const cardData = [
-    {
-      image:
-        "https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg",
-      title: "Pizza",
-      description: "Food",
-    },
-    {
-      image:
-        "https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg",
-      title: "Pizza",
-      description: "Food",
-    },
-  ]; // make dynamic json array to map over fetched data
+  const [menu, setMenu] = useState<MenuProps[]>([]);
 
+  useEffect(() => {
+    MenuService.getDishes().then((data) => {
+      setMenu(data);
+      console.log(menu);
+      console.log(data);
+    });
+  }, []);
+  console.log("hhelo");
   return (
     <>
       <Header />
@@ -32,17 +29,20 @@ function Menupage() {
         Menu
       </Typography>
       <Grid container spacing={2}>
-        {cardData.map((card, index) => (
+        {menu.map((item, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 140 }}
-                image={card.image}
-                title={card.title}
+                image={item.image}
+                title={item.dishName}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {card.description}
+                  {item.dishName}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {item.description}
                 </Typography>
                 <Button size="small">See more</Button>
               </CardContent>
