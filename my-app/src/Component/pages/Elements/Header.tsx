@@ -13,8 +13,8 @@ function Header() {
         <div className="buttoncenter">
           <Button color="inherit" onClick={() => window.location.href = '/reservation'}>Reservation</Button>
           <Button color="inherit" onClick={() => window.location.href = '/menu'}>Menu Cart</Button>
-          <Button color="inherit">About Us</Button>
-          <Button className="button">Login</Button>
+          <Button color="inherit" onClick={() => window.location.href = '/about'}>About Us</Button>
+          <Button className="button" onClick={() => window.location.href = '/login'}>Login</Button>
         </div>
       </Toolbar>
     </>
