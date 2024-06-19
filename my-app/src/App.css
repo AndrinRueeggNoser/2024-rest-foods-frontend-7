@@ -3,54 +3,55 @@
   top: 0;
   right: 0;
   width: 98.3%;
-  height: 120px;
+  height: 75px;
   background-color: #c6bfbf;
   color: black;
   margin-top: -1%;
   margin-left: -1%;
-
-  .button {
-    background-color: black;
-    color: white;
-  }
 }
-
+ 
+.header .button {
+  background-color: black;
+  color: white;
+}
+ 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(211, 207, 207);
 }
-
+ 
 .buttoncenter {
   display: block;
   margin-left: 70%;
   margin-right: auto;
   width: 50%;
+  margin-top: 0.7%;
 }
-
+ 
 h1 {
   margin-left: 40%;
   margin-top: 5%;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+ 
 .icon {
   width: 20%;
   margin: 0 auto;
   display: block;
 }
-
+ 
 .about {
   color: black;
   display: inline-block;
-  width: 50;
+  width: 50%;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 5%;
-
-  button {
-    background-color: black;
-    color: white;
-  }
 }
-
+ 
+.about button {
+  background-color: black;
+  color: white;
+}
+ 
 .menu {
   color: black;
   position: absolute;
@@ -59,18 +60,18 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   display: inline-block;
   margin-top: 5%;
-
-  button {
-    background-color: black;
-    color: white;
-  }
 }
-
+ 
+.menu button {
+  background-color: black;
+  color: white;
+}
+ 
 .houseicon {
   margin-left: 0%;
   width: 20%;
 }
-
+ 
 .reservation {
   margin: 0;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -80,21 +81,21 @@ h1 {
   letter-spacing: -0.01562em;
   margin-bottom: 0.35em;
 }
-
+ 
 h2 {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
+ 
 .contact-form {
   max-width: 600px;
-
   padding: 1em;
 }
-
+ 
 .contact-form p {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: bold;
 }
-
+ 
 .contact-form input,
 .contact-form textarea {
   width: calc(100% - 22px);
@@ -104,11 +105,11 @@ h2 {
   border: 1px solid #ccc;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
-
+ 
 .contact-form textarea {
   height: 100px;
 }
-
+ 
 .contact-form button {
   width: 100%;
   padding: 10px;
@@ -120,32 +121,317 @@ h2 {
   cursor: pointer;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
-
+ 
 .contact-form button:hover {
   background-color: #7f807f;
 }
-
+ 
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+ 
+.form-container {
+  width: 60%;
+}
+ 
+.contact-tables-container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+ 
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+ 
 .names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+ 
+.names > div {
+  flex: 1;
+  min-width: 200px;
+}
+ 
+.p {
+  width: 100%;
+  margin-top: 10px;
+}
+ 
+p {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+ 
+.tabletime {
+  display: inline-block;
+  width: 32%;
+  margin: 0 auto;
+}
+ 
+.tablechoice {
+  width: 50%;
+}
+ 
+.tables {
+  width: 100%;
+}
+ 
+.textahera {
   display: inline-block;
   width: 20%;
   margin-right: 2%;
 }
-
-.names:last-child {
-  margin-right: 0;
+ 
+.names1 {
+  margin-left: 22%;
+  display: inline-block;
 }
-
-.p {
-  width: 20%;
+ 
+.names2 {
+  margin-left: 66%;
+  display: inline-block;
 }
-
-p {
+ 
+.margintop {
+  margin-top: -10%;
+}
+ 
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+ 
+.login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+ 
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+ 
+.form-group {
+  margin-bottom: 15px;
+}
+ 
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+ 
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+ 
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+ 
+.btn-login:hover {
+  background-color: #0056b3;
+}
+ 
+.font {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
-
-.tabletime {
-  display: inline-block;
-  width: 16.5%;
-  position: "absolute";
-  margin: 0 auto;
+ 
+@media (max-width: 1200px) {
+  .header {
+    width: 100%;
+  }
+  .buttoncenter {
+    margin-left: 60%;
+  }
+  h1 {
+    margin-left: 35%;
+  }
+}
+ 
+@media (max-width: 992px) {
+  .header {
+    width: 100%;
+  }
+  .buttoncenter {
+    margin-left: 50%;
+    width: 60%;
+  }
+  h1 {
+    margin-left: 30%;
+  }
+  .icon,
+  .houseicon {
+    width: 25%;
+  }
+  .names,
+  .textahera,
+  .tabletime {
+    width: 30%;
+  }
+  .menu,
+  .about {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+ 
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+  .buttoncenter {
+    margin-left: 40%;
+    width: 70%;
+  }
+  h1 {
+    margin-left: 25%;
+  }
+  .icon,
+  .houseicon {
+    width: 30%;
+  }
+  .names,
+  .textahera,
+  .tabletime {
+    width: 40%;
+  }
+  .menu,
+  .about {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+ 
+@media (max-width: 576px) {
+  .header {
+    width: 100%;
+  }
+  .buttoncenter {
+    margin-left: 20%;
+    width: 80%;
+  }
+  h1 {
+    margin-left: 15%;
+    font-size: 1.5rem;
+  }
+  .icon,
+  .houseicon {
+    width: 40%;
+  }
+  .names,
+  .textahera,
+  .tabletime {
+    width: 100%;
+  }
+  .tables {
+    width: 100%;
+    margin-left: 0;
+  }
+  .menu,
+  .about {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .reservation {
+    font-size: 2rem;
+  }
+}
+ 
+@media (max-width: 400px) {
+  .header {
+    width: 100%;
+  }
+  .buttoncenter {
+    margin-left: 10%;
+    width: 90%;
+  }
+  h1 {
+    margin-left: 5%;
+    font-size: 1.2rem;
+  }
+  .icon,
+  .houseicon {
+    width: 50%;
+  }
+  .names,
+  .textahera,
+  .tabletime {
+    width: 100%;
+  }
+  .menu,
+  .about {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .reservation {
+    font-size: 1.5rem;
+  }
+}
+ 
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.contact-form .form-group label,
+.contact-form .form-group input,
+.contact-form .form-group textarea,
+.contact-form .form-group select {
+  width: 100%;
+  margin-bottom: 10px;
+}
+ 
+.names {
+  width: 45%;
+}
+ 
+.names1,
+.names2 {
+  width: 45%;
+  margin-left: 5%;
+}
+ 
+@media (max-width: 576px) {
+  .names,
+  .names1,
+  .names2 {
+    width: 100%;
+    margin-left: 0;
+  }
 }

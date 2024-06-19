@@ -1,17 +1,21 @@
 import { defaultAxiosInstance } from "./MenuFetch";
 
 async function getDishes() {
-    
   try {
-    console.log("test")
-    const response = await defaultAxiosInstance.get("dish");
-    console.log("API Response", response.data);
+    const response = await defaultAxiosInstance.get(`dish`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Error");
     throw error;
   }
 }
+
+//async function getDishById(id: number) {
+//        try {
+//            const response = await defaultAxiosInstance.get(`dish/${id}`)
+//        }
+//}
 
 const MenuService = {
   getDishes,
