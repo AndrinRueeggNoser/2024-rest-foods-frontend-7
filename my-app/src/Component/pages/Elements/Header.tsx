@@ -6,6 +6,7 @@ import HomeIcon from '@mui/icons-material/Home';
 function Header() {
   return (
     <>
+         <AppBar position="sticky"></AppBar>
           <Toolbar className="header">
         <div className="homeicon-container">
           <HomeIcon className="houseicon" onClick={() => window.location.href = '/'}></HomeIcon>
@@ -17,6 +18,7 @@ function Header() {
           <Button className="button" onClick={() => window.location.href = '/login'}>Login</Button>
         </div>
       </Toolbar>
+      
     </>
   );
 }

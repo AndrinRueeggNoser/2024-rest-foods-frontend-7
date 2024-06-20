@@ -1,8 +1,13 @@
 import React from 'react';
+import Header from "./Elements/Header";
+import Footer from "./Elements/Footer";
 
 
 const Loginpage: React.FC = () => {
   return (
+    <>
+      <Header />
+
     <div className="font">
     <div className="login-container">
       <div className="login-box">
@@ -20,7 +25,9 @@ const Loginpage: React.FC = () => {
         </form>
       </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+      </>
   );
 }
 
