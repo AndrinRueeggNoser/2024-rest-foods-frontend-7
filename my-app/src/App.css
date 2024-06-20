@@ -1,8 +1,10 @@
+/*headder*/
+ 
 .header {
   position: fixed;
   top: 0;
   right: 0;
-  width: 98.3%;
+  width: 100%;
   height: 75px;
   background-color: #c6bfbf;
   color: black;
@@ -15,8 +17,101 @@
   color: white;
 }
  
+/*background*/
 body {
   background-color: rgb(211, 207, 207);
+}
+ 
+ 
+ 
+/*reservation*/
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+.form-container {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+}
+ 
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+ 
+.contact-info h2 {
+  text-align: center;
+}
+ 
+.reservation {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 4rem;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
+  margin-bottom: 0.35em;
+}
+ 
+h2 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+ 
+.names {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+ 
+.names > div {
+  flex: 1;
+  min-width: 140px;
+}
+ 
+.p {
+  margin-top: 10px;
+}
+ 
+.tabletime {
+  margin-top: 10px;
+}
+ 
+.tables {
+  margin-top: 20px;
+}
+ 
+.tables img {
+  max-width: 100%;
+  height: auto;
+}
+ 
+.button {
+  display: block;
+  margin-top: 20px;
+}
+ 
+/*sizes*/
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .form-container,
+  .contact-info {
+    margin-right: 0;
+    width: 100%;
+  }
+ 
+  .contact-info {
+    text-align: center;
+  }
 }
  
 .buttoncenter {
@@ -27,17 +122,14 @@ body {
   margin-top: 0.7%;
 }
  
-h1 {
-  margin-left: 40%;
-  margin-top: 5%;
-  font-family: Arial, Helvetica, sans-serif;
-}
- 
 .icon {
   width: 20%;
   margin: 0 auto;
   display: block;
 }
+ 
+ 
+/*about*/
  
 .about {
   color: black;
@@ -51,6 +143,8 @@ h1 {
   background-color: black;
   color: white;
 }
+ 
+/*menu*/
  
 .menu {
   color: black;
@@ -67,23 +161,11 @@ h1 {
   color: white;
 }
  
+/*icon in headder*/
+ 
 .houseicon {
   margin-left: 0%;
   width: 20%;
-}
- 
-.reservation {
-  margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 300;
-  font-size: 6rem;
-  line-height: 1.167;
-  letter-spacing: -0.01562em;
-  margin-bottom: 0.35em;
-}
- 
-h2 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
  
 .contact-form {
@@ -91,6 +173,7 @@ h2 {
   padding: 1em;
 }
  
+/*contact form for reservation*/
 .contact-form p {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: bold;
@@ -126,87 +209,8 @@ h2 {
   background-color: #7f807f;
 }
  
-.main-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 20px;
-}
  
-.form-container {
-  width: 60%;
-}
- 
-.contact-tables-container {
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
- 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-bottom: 20px;
-}
- 
-.names {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-}
- 
-.names > div {
-  flex: 1;
-  min-width: 200px;
-}
- 
-.p {
-  width: 100%;
-  margin-top: 10px;
-}
- 
-p {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-}
- 
-.tabletime {
-  display: inline-block;
-  width: 32%;
-  margin: 0 auto;
-}
- 
-.tablechoice {
-  width: 50%;
-}
- 
-.tables {
-  width: 100%;
-}
- 
-.textahera {
-  display: inline-block;
-  width: 20%;
-  margin-right: 2%;
-}
- 
-.names1 {
-  margin-left: 22%;
-  display: inline-block;
-}
- 
-.names2 {
-  margin-left: 66%;
-  display: inline-block;
-}
- 
-.margintop {
-  margin-top: -10%;
-}
- 
+/*login*/
 .login-container {
   display: flex;
   justify-content: center;
@@ -263,6 +267,8 @@ p {
 .font {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
+ 
+/*different sizes*/
  
 @media (max-width: 1200px) {
   .header {
@@ -400,7 +406,7 @@ p {
     text-align: center;
   }
   .reservation {
-    font-size: 1.5rem;
+    font-size: 1.5vh;
   }
 }
  
@@ -418,20 +424,86 @@ p {
 }
  
 .names {
-  width: 45%;
+  width: 100%;
 }
  
 .names1,
 .names2 {
-  width: 45%;
-  margin-left: 5%;
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
 }
  
-@media (max-width: 576px) {
-  .names,
-  .names1,
-  .names2 {
-    width: 100%;
-    margin-left: 0;
+/*footer*/
+.footer {
+  background-color: #c6bfbf;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+  margin-top: 50px;
+}
+ 
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+ 
+.footer-about,
+.footer-links,
+.footer-contact {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+ 
+.footer-about h3,
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 10px;
+}
+ 
+.footer-about p,
+.footer-contact p {
+  margin: 5px 0;
+}
+ 
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+ 
+.footer-links ul li {
+  margin-bottom: 5px;
+}
+ 
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+ 
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+ 
+.footer-bottom {
+  text-align: center;
+  padding: 10px 20px;
+}
+ 
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+ 
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    margin-bottom: 20px;
   }
 }

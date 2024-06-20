@@ -2,9 +2,10 @@ import Header from "./Elements/Header";
 import Textarea from "@mui/joy/Textarea";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
-import Button from "@mui/material/Button";
-import React from "react";
 import tables from "./tables.png";
+import Button from "@mui/material/Button";
+import Footer from "./Elements/Footer";
+import React from "react";
 
 const starttime = [
   { value: "12:00", label: "12:00" },
@@ -49,125 +50,122 @@ export default function ReservationPage() {
   return (
     <>
       <Header />
-      <h1 className="reservation">Reservation</h1>
-      <h2>Reservate over mail</h2>
       <div className="main-container">
-        <form className="form-container">
-          <div className="names">
-            <div>
-              <p>First name</p>
+        <div className="form-container">
+          <h1 className="reservation">Reservation</h1>
+          <h2>Reservate over mail</h2>
+          <form>
+            <div className="names">
+              <div>
+                <p>First name</p>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  label="John"
+                  multiline
+                  maxRows={1}
+                  sx={{ width: "100%" }}
+                />
+              </div>
+              <div>
+                <p>Last name</p>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  label="Doe"
+                  multiline
+                  maxRows={1}
+                  sx={{ width: "100%" }}
+                />
+              </div>
+            </div>
+            <div className="p margintop">
+              <p>Email</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="John"
+                label="johndoe@example.com"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
               />
             </div>
-            <div>
-              <p>Last name</p>
+            <div className="p">
+              <p>Phone Number</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="Doe"
+                label="079 348 76 45"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
               />
             </div>
-          </div>
-          <div className="p margintop">
-            <p>Email</p>
-            <TextField
-              id="outlined-multiline-flexible"
-              label="johndoe@example.com"
-              multiline
-              maxRows={1}
-              sx={{ width: "100%" }}
-            />
-          </div>
-          <div className="p">
-            <p>Phone Number</p>
-            <TextField
-              id="outlined-multiline-flexible"
-              label="079 348 76 45"
-              multiline
-              maxRows={1}
-              sx={{ width: "100%" }}
-            />
-          </div>
-          <div className="tabletime">
-            <p>Time and Table</p>
-            <TextField
-              select
-              label="Start Time"
-              defaultValue="Not Selected"
-              sx={{ width: "100%" }}
-            >
-              {starttime.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </div>
-          <div className="tabletime">
-            <TextField
-              select
-              label="End Time"
-              defaultValue="Not Selected"
-              sx={{ width: "100%" }}
-            >
-              {endtime.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </div>
-          <div className="tabletime">
-            <TextField
-              select
-              label="Table Number"
-              defaultValue="Not Selected"
-              sx={{ width: "100%" }}
-            >
-              {tablenr.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </div>
-          <div>
-            <p>Special Requests</p>
-            <Textarea
-              minRows={2}
-              placeholder="Type something..."
-              variant="outlined"
-              sx={{ width: "100%", backgroundColor: "transparent" }}
-            />
-          </div>
-          <div>
-            <Button className="button">Submit</Button>
-          </div>
-        </form>
-        <div className="contact-tables-container">
-          <div className="contact-info">
-            <div className="names1">
-              <h2>Contact us in a different way</h2>
+            <div className="tabletime">
+              <p>Time and Table</p>
+              <TextField
+                select
+                label="Start Time"
+                defaultValue="Not Selected"
+                sx={{ width: "100%" }}
+              >
+                {starttime.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
             </div>
-            <div className="names2">
-              <p>Rest Foods</p>
-              <p>Number: '052 202 75 22'</p>
-              <p>E-Mail: restfoodszuerich@gmail.com</p>
-              <p>Standort: Hero Strasse 12</p>
+            <div className="tabletime">
+              <TextField
+                select
+                label="End Time"
+                defaultValue="Not Selected"
+                sx={{ width: "100%" }}
+              >
+                {endtime.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
             </div>
-          </div>
+            <div className="tabletime">
+              <TextField
+                select
+                label="Table Number"
+                defaultValue="Not Selected"
+                sx={{ width: "100%" }}
+              >
+                {tablenr.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </div>
+            <div>
+              <p>Special Requests</p>
+              <Textarea
+                minRows={2}
+                placeholder="Type something..."
+                variant="outlined"
+                sx={{ width: "100%", backgroundColor: "transparent" }}
+              />
+            </div>
+            <div>
+              <Button className="button">Submit</Button>
+            </div>
+          </form>
+        </div>
+        <div className="contact-info">
+          <h2>Contact us in a different way</h2>
+          <p>Rest Foods</p>
+          <p>Number: '052 202 75 22'</p>
+          <p>E-Mail: restfoodszuerich@gmail.com</p>
+          <p>Standort: Hero Strasse 12</p>
           <div className="tables">
             <img src={tables} alt="tables" />
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
