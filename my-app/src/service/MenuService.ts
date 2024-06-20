@@ -11,14 +11,28 @@ async function getDishes() {
   }
 }
 
-//async function getDishById(id: number) {
-//        try {
-//            const response = await defaultAxiosInstance.get(`dish/${id}`)
-//        }
-//}
+async function getDishById(id: number) {
+  try {
+    const response = await defaultAxiosInstance.get(`dish/${id}`);
+    return response.data;
+  } catch (error) {
+    alert(error);
+  }
+}
+
+async function deleteDish(id: number) {
+  try {
+    const response = await defaultAxiosInstance.delete(`dish/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
 
 const MenuService = {
   getDishes,
+  deleteDish,
+  getDishById
 };
 
 export default MenuService;

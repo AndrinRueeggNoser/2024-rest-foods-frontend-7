@@ -34,6 +34,12 @@ function Header() {
             About Us
           </Button>
           <Button
+            color="inherit"
+            onClick={() => (window.location.href = "dashboard")}
+          >
+            Dashboard
+          </Button>
+          <Button
             className="button"
             onClick={() => (window.location.href = "/login")}
           >
