@@ -42,17 +42,12 @@ export default function Dashboard() {
     }
   };
 
-  const handleSelectDish = async (menuId: number) => {
-    try {
-      const dish = await MenuService.getDishById(menuId);
-      setSelectedDish(dish);
-    } catch (error) {
-      console.error("Error", error);
-    }
-  };
-
   const handleNavigateToDish = (menuId: number) => {
     navigate(`/dish/${menuId}`);
+  };
+
+  const handleNavigateToAddDish = () => {
+    navigate(`/add`);
   };
 
   return (

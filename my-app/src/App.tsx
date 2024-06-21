@@ -9,6 +9,7 @@ import Map from "./Component/pages/Aboutpage";
 import Loginpage from "./Component/pages/Loginpage";
 import React from "react";
 import DishPreview from "./Component/crud/DishPreview";
+import AddDish from "./Component/crud/AddDish";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/about" element={<Map />} />
           <Route path="/login" element={<Loginpage />} />
+          <Route path="/add" element={<AddDish />} />
         </Routes>
       </BrowserRouter>
     </>

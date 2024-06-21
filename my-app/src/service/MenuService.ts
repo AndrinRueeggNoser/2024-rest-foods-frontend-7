@@ -31,10 +31,37 @@ async function deleteDish(id: number) {
   }
 }
 
+async function createDish(
+  dishId: number,
+  dishName: string,
+  description: string,
+  imageLink: string,
+  region: string,
+  price: number,
+  chefsChoice: boolean
+) {
+  try {
+    const data = {
+      dishName,
+      dishId,
+      description,
+      imageLink,
+      region,
+      price,
+      chefsChoice,
+    };
+    const response = await defaultAxiosInstance.post(`dish`, data);
+    return response.data;
+  } catch (error) {
+    alert(error);
+  }
+}
+
 const MenuService = {
   getDishes,
   deleteDish,
   getDishById,
+  createDish
 };
 
 export default MenuService;
