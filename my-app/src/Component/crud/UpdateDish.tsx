@@ -1,8 +1,8 @@
 import { useState } from "react";
 import MenuService from "../../service/MenuService";
-import React from "react";
+import { useParams } from "react-router";
 
-function AddDish() {
+function UpdateDish() {
   const [dishId, setDishId] = useState("");
   const [dishName, setDishName] = useState("");
   const [description, setDescription] = useState("");
@@ -11,10 +11,10 @@ function AddDish() {
   const [price, setPrice] = useState("");
   const [chefsChoice, setChefsChoice] = useState("");
 
-  async function handleAddDish() {
+  async function handleUpdateDish() {
     try {
-      await MenuService.createDish(
-        dishId, // if bug found, it should be a visual bug (it was atleast for Gabriel)
+      await MenuService.updateDish(
+        dishId,
         dishName,
         description,
         image,
@@ -23,13 +23,13 @@ function AddDish() {
         chefsChoice
       );
     } catch (error) {
-      console.error(error);
+      alert(error);
     }
   }
 
   return (
     <>
-      <h1>Add Dish</h1>
+      <h1>Update Dish</h1>
       <label>
         Dish ID:
         <input
@@ -79,16 +79,16 @@ function AddDish() {
         />
       </label>
       <label>
-        Chef's Choice:
+        Chefs Choice:
         <input
           type="text"
           value={chefsChoice}
           onChange={(e) => setChefsChoice(e.target.value)}
         />
       </label>
-      <button onClick={handleAddDish}>Add Dish</button>
+      <button onClick={handleUpdateDish}>Update Dish</button>
     </>
   );
 }
 
-export default AddDish;
+export default UpdateDish;

@@ -50,6 +50,10 @@ export default function Dashboard() {
     navigate(`/add`);
   };
 
+  const handleNavigateToUpdateDish = (menuId: number) => {
+    navigate(`/update/${menuId}`);
+  };
+
   return (
     <>
       <Header />
@@ -85,6 +89,10 @@ export default function Dashboard() {
                 </Button>
                 <Button onClick={() => handleNavigateToDish(menus.dishId)}>
                   preview
+                </Button>
+                <Button onClick={handleNavigateToAddDish}>add</Button>
+              <Button onClick={() => handleNavigateToUpdateDish(menus.dishId)}>
+                  update
                 </Button>
               </TableCell>
             </TableRow>

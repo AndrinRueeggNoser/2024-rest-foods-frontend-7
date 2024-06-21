@@ -57,11 +57,39 @@ async function createDish(
   }
 }
 
+async function updateDish(
+  dishId: number,
+  dishName: string,
+  description: string,
+  imageLink: string,
+  region: string,
+  price: number,
+  chefsChoice: boolean
+) {
+  try {
+    const data = {
+      dishId,
+      dishName,
+      description,
+      imageLink,
+      region,
+      price,
+      chefsChoice,
+    };
+
+    const response = await defaultAxiosInstance.put(`dish/${dishId}`, data);
+    return response.data;
+  } catch (error) {
+    alert(error);
+  }
+}
+
 const MenuService = {
   getDishes,
   deleteDish,
   getDishById,
-  createDish
+  createDish,
+  updateDish
 };
 
 export default MenuService;
