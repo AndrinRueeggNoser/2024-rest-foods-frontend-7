@@ -88,11 +88,8 @@ export default function Dashboard() {
                 <Button onClick={() => handleDeleteMenu(menus.dishId)}>
                   delete
                 </Button>
-                <Button onClick={() => handleSelectDish(menus.dishId)}>
-                  preview
-                </Button>
                 <Button onClick={() => handleNavigateToDish(menus.dishId)}>
-                  edit
+                  preview
                 </Button>
               </TableCell>
             </TableRow>

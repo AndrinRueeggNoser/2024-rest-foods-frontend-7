@@ -8,7 +8,7 @@ import Reservation from "./Component/pages/Reservationpage";
 import Map from "./Component/pages/Aboutpage";
 import Loginpage from "./Component/pages/Loginpage";
 import React from "react";
-import DishPreview from "./Component/pages/DishPreview";
+import DishPreview from "./Component/crud/DishPreview";
 
 function App() {
   return (
