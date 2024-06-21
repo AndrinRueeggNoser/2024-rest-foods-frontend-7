@@ -8,6 +8,7 @@ import Reservation from "./Component/pages/Reservationpage";
 import Map from "./Component/pages/Aboutpage";
 import Loginpage from "./Component/pages/Loginpage";
 import React from "react";
+import DishPreview from "./Component/pages/DishPreview";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<Menupage />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/menu/:id" /*element={< />}*/ />
+          <Route path="/dish/:id" element={<DishPreview />} />
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/about" element={<Map />} />
           <Route path="/login" element={<Loginpage />} />

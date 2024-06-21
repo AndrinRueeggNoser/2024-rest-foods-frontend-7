@@ -11,17 +11,10 @@ import { useEffect, useState } from "react";
 import { MenuProps } from "../../MenuProps";
 import MenuService from "../../service/MenuService";
 import React from "react";
+import useMenu, { RequestMechanism } from "../../service/useMenu";
 
 function Menupage() {
-  const [menu, setMenu] = useState<MenuProps[]>([]);
-
-  useEffect(() => {
-    console.log("test2");
-    MenuService.getDishes().then((data) => {
-      setMenu(data);
-      console.log(data);
-    });
-  }, []);
+  const menu = useMenu();
 
   return (
     <>

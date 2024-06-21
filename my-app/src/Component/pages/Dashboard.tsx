@@ -15,16 +15,22 @@ import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const [menu, setMenu] = useState<MenuProps[]>([]);
+  const [selectedDish, setSelectedDish] = useState<MenuProps>();
 
   useEffect(() => {
-    console.log("test2");
-    MenuService.getDishes().then((data) => {
-      setMenu(data);
-      console.log(data);
-    });
-  }, []);
+    const fetchDishes = async () => {
+      try {
+        const data = await MenuService.getDishes();
+        setMenu(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Error");
+      }
+    };
 
-  const [menu, setMenu] = useState<MenuProps[]>([]);
+    fetchDishes();
+  }, []);
 
   const handleDeleteMenu = async (menuId: number) => {
     try {
@@ -32,11 +38,20 @@ export default function Dashboard() {
       const updatedMenu = menu.filter((menus) => menus.dishId !== menuId);
       setMenu(updatedMenu);
     } catch (error) {
-      alert(error);
+      alert("Error");
     }
   };
 
-  const handleGetDishById = async (menuId: number) => {
+  const handleSelectDish = async (menuId: number) => {
+    try {
+      const dish = await MenuService.getDishById(menuId);
+      setSelectedDish(dish);
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
+  const handleNavigateToDish = (menuId: number) => {
     navigate(`/dish/${menuId}`);
   };
 
@@ -46,6 +61,16 @@ export default function Dashboard() {
       <Typography variant="h1" gutterBottom>
         Dashboard
       </Typography>
+      {selectedDish && (
+        <div>
+          <Typography variant="h5">{selectedDish.dishName}</Typography>
+          <Typography variant="body1">ID: {selectedDish.dishId}</Typography>
+          <Typography variant="body1">
+            Description: {selectedDish.description}
+          </Typography>
+          <Typography variant="body1">Price: {selectedDish.price}</Typography>
+        </div>
+      )}
       <Table>
         <TableHead>
           <TableRow>
@@ -63,11 +88,13 @@ export default function Dashboard() {
                 <Button onClick={() => handleDeleteMenu(menus.dishId)}>
                   delete
                 </Button>
-                <Button onClick={() => handleGetDishById(menus.dishId)}>
-                  by id
+                <Button onClick={() => handleSelectDish(menus.dishId)}>
+                  preview
+                </Button>
+                <Button onClick={() => handleNavigateToDish(menus.dishId)}>
+                  edit
                 </Button>
               </TableCell>
-              <TableCell align="right"></TableCell>
             </TableRow>
           ))}
         </TableBody>
