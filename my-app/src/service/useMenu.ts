@@ -10,7 +10,9 @@ const useMenu = () => {
     MenuService.getDishes().then((data) => {
       setMenu(data);
       console.log(data);
+      data.forEach((dish) => console.log(dish.dishName));
     });
+
   }, []);
 
   return menu;

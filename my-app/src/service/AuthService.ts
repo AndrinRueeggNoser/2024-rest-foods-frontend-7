@@ -7,6 +7,8 @@ export const login = async (email: string, password: string) => {
       password: password,
     });
     const accessToken = response.headers["authorization"];
+    console.log(response.data.userRole.roleName);
+    localStorage.setItem("role", response.data.userRole.roleName);
     localStorage.setItem("accessToken", accessToken);
     return accessToken;
   } catch (error) {

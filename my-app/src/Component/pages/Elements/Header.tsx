@@ -1,6 +1,8 @@
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
+import { useEffect, useState } from "react";
+import MenuService from "../../../service/MenuService";
 
 function Header() {
   return (
@@ -32,17 +34,20 @@ function Header() {
             About Us
           </Button>
           <Button
-            color="inherit"
-            onClick={() => (window.location.href = "dashboard")}
-          >
-            Dashboard
-          </Button>
-          <Button
             className="button"
             onClick={() => (window.location.href = "/login")}
           >
             Login
           </Button>
+          {localStorage.getItem("role") == "ADMIN" ? (
+            <Button
+              color="inherit"
+              onClick={() => (window.location.href = "dashboard")}
+            >
+              Dashboard
+            </Button>
+          ): null
+          }
         </div>
       </Toolbar>
     </>
