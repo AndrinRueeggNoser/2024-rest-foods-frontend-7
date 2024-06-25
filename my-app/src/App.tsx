@@ -1,13 +1,11 @@
-import { useState } from "react";
 import "./App.css";
 import HomePage from "./Component/pages/Homepage";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menupage from "./Component/pages/Menupage";
 import Dashboard from "./Component/pages/Dashboard";
 import Reservation from "./Component/pages/Reservationpage";
 import Map from "./Component/pages/Aboutpage";
 import Loginpage from "./Component/pages/Loginpage";
-import React from "react";
 import DishPreview from "./Component/crud/DishPreview";
 import AddDish from "./Component/crud/AddDish";
 import UpdateDish from "./Component/crud/UpdateDish";

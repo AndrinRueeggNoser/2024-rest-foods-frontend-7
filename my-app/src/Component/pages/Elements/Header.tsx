@@ -1,8 +1,6 @@
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
-import React from "react";
 
 function Header() {
   return (

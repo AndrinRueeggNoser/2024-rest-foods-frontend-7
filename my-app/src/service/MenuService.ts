@@ -1,5 +1,17 @@
 import { defaultAxiosInstance } from "./MenuFetch";
 
+//const getAuthToken = () => {
+//  const token = localStorage.getItem("token");
+//  if (!token) {
+//    throw new Error("No token found!");
+//  }
+//  return {
+//    headers: {
+//      Authorization: `Bearer ${token}`,
+//    },
+//  };
+//};
+
 async function getDishes() {
   try {
     const response = await defaultAxiosInstance.get("dish");
@@ -89,7 +101,7 @@ const MenuService = {
   deleteDish,
   getDishById,
   createDish,
-  updateDish
+  updateDish,
 };
 
 export default MenuService;

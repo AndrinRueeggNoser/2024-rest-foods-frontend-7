@@ -7,14 +7,17 @@ import {
   Typography,
 } from "@mui/material";
 import Header from "./Elements/Header";
-import { useEffect, useState } from "react";
-import { MenuProps } from "../../MenuProps";
-import MenuService from "../../service/MenuService";
-import React from "react";
 import useMenu, { RequestMechanism } from "../../service/useMenu";
+import { useNavigate } from "react-router";
 
 function Menupage() {
   const menu = useMenu();
+    const navigate = useNavigate();
+
+    function handleButtonClick(item: any) {
+      navigate(`/dish/${item.dishId}`);
+    }
+
 
   return (
     <>
@@ -38,7 +41,7 @@ function Menupage() {
                 <Typography variant="body2" color="text.secondary">
                   {item.description}
                 </Typography>
-                <Button size="small">See more</Button>
+                <Button onClick={() => handleButtonClick(item)}>See more</Button>
               </CardContent>
             </Card>
           </Grid>
@@ -46,6 +49,8 @@ function Menupage() {
       </Grid>
     </>
   );
+
+  
 }
 
 export default Menupage;
