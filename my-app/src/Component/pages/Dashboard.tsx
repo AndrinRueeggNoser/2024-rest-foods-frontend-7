@@ -74,6 +74,9 @@ export default function Dashboard() {
         <TableHead>
           <TableRow>
             <TableCell>Menu</TableCell>
+            <TableCell align="right">ID</TableCell>
+            <TableCell align="right">Actions</TableCell>
+            <TableCell align="right"><Button onClick={handleNavigateToAddDish}>add</Button></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -90,7 +93,7 @@ export default function Dashboard() {
                 <Button onClick={() => handleNavigateToDish(menus.dishId)}>
                   preview
                 </Button>
-                <Button onClick={handleNavigateToAddDish}>add</Button>
+                
               <Button onClick={() => handleNavigateToUpdateDish(menus.dishId)}>
                   update
                 </Button>
