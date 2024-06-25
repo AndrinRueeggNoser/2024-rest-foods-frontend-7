@@ -33,12 +33,24 @@ function Header() {
           >
             About Us
           </Button>
-          <Button
-            className="button"
-            onClick={() => (window.location.href = "/login")}
-          >
-            Login
-          </Button>
+          {localStorage.getItem("role") == null ? (
+            <Button
+              className="button"
+              onClick={() => (window.location.href = "/login")}
+            >
+              Login
+            </Button>
+          ) : (
+            <Button
+              className="button"
+              onClick={() => {localStorage.removeItem("role");
+                location.reload();
+              }}
+            >
+              Sign out
+            </Button>
+          )}
+
           {localStorage.getItem("role") == "ADMIN" ? (
             <Button
               color="inherit"
@@ -46,8 +58,7 @@ function Header() {
             >
               Dashboard
             </Button>
-          ): null
-          }
+          ) : null}
         </div>
       </Toolbar>
     </>
