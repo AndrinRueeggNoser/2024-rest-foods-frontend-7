@@ -31,6 +31,7 @@ function DishPreview() {
       </Typography>
       {selectedDish ? (
         <>
+        <Typography variant="h5">{selectedDish.image}</Typography>
           <Typography variant="h5">{selectedDish.dishName}</Typography>
           <Typography variant="body1">ID: {selectedDish.dishId}</Typography>
           <Typography variant="body1">
