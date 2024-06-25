@@ -3,14 +3,37 @@
 .header {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
-  height: 75px;
-  background-color: #c6bfbf;
-  color: black;
-  margin-top: -1%;
-  margin-left: -1%;
+  z-index: 1000;
+  padding: 1% 0;
+  background-color: #000000;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+.earth {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180vh;
+  background-color: transparent;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.wall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+
+
  
 .header .button {
   background-color: black;
@@ -19,7 +42,8 @@
  
 /*background*/
 body {
-  background-color: rgb(211, 207, 207);
+  background-color: #000000;
+  color: white;
 }
  
 /*reservation*/
@@ -42,6 +66,7 @@ body {
   flex: 1;
   min-width: 300px;
   text-align: left;
+  background-color: #043835;
 }
  
 .contact-info h2 {
@@ -65,19 +90,24 @@ h2 {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  background-color: #043835;
 }
  
 .names > div {
   flex: 1;
   min-width: 140px;
+
 }
  
 .p {
   margin-top: 10px;
+  background-color: #043835;
 }
  
 .tabletime {
   margin-top: 10px;
+  background-color: #043835;
+  color: white;
 }
  
 .tables {
@@ -135,6 +165,7 @@ h2 {
   width: 50%;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 5%;
+  margin-left: 40%;
 }
  
 .about button {
@@ -145,7 +176,7 @@ h2 {
 /*menu*/
  
 .menu {
-  color: black;
+  color: white;
   position: absolute;
   right: 0;
   margin-right: 5%;
@@ -153,11 +184,7 @@ h2 {
   display: inline-block;
   margin-top: 5%;
 }
- 
-.menu button {
-  background-color: black;
-  color: white;
-}
+
  
 /*icon in headder*/
  
@@ -197,7 +224,7 @@ h2 {
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 16px;
   cursor: pointer;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -434,7 +461,7 @@ h2 {
  
 /*footer*/
 .footer {
-  background-color: #c6bfbf;
+  background-color: #000000;
   color: #fff;
   padding: 20px 0;
   width: 100%;
@@ -504,4 +531,8 @@ h2 {
   .footer-contact {
     margin-bottom: 20px;
   }
+}
+
+font {
+  font-family: Arial, Helvetica, sans-serif;
 }

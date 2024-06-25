@@ -6,6 +6,22 @@ import tables from "./tables.png";
 import Button from "@mui/material/Button";
 import Footer from "./Elements/Footer";
 import React from "react";
+import wall from "./wall.png";
+
+const textFieldStyles = {
+  input: { color: "white" }, // Text color
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "white", // Border color
+    },
+    "&:hover fieldset": {
+      borderColor: "white", // Border color on hover
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white", // Border color when focused
+    },
+  },
+};
 
 const starttime = [
   { value: "12:00", label: "12:00" },
@@ -50,8 +66,10 @@ export default function ReservationPage() {
   return (
     <>
       <Header />
+   
       <div className="main-container">
         <div className="form-container">
+        <img className="wall" src={wall} alt="Reservated" />
           <h1 className="reservation">Reservation</h1>
           <h2>Reservate over mail</h2>
           <form>
@@ -140,13 +158,18 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
+          
             <div>
               <p>Special Requests</p>
               <Textarea
                 minRows={2}
                 placeholder="Type something..."
                 variant="outlined"
-                sx={{ width: "100%", backgroundColor: "transparent" }}
+                sx={{
+                  width: "100%", 
+                  backgroundColor: "#043835",
+                  color: "white" 
+                }}
               />
             </div>
             <div>
