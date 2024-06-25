@@ -3,6 +3,7 @@ import { MenuProps } from "../../MenuProps";
 import { Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import MenuService from "../../service/MenuService";
+import Header from "../pages/Elements/Header";
 
 function DishPreview() {
   const [selectedDish, setSelectedDish] = useState<MenuProps>();
@@ -26,11 +27,13 @@ function DishPreview() {
 
   return (
     <>
+      <Header />
       <Typography variant="h1" gutterBottom>
         Dish Preview
       </Typography>
       {selectedDish ? (
         <>
+          <Typography variant="h5">{selectedDish.image}</Typography>
           <Typography variant="h5">{selectedDish.dishName}</Typography>
           <Typography variant="body1">ID: {selectedDish.dishId}</Typography>
           <Typography variant="body1">

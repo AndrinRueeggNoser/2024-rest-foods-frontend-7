@@ -22,6 +22,19 @@ async function getUser() {
    }
 }
 
+const getAuthorizationToken = () => {
+  const token = localStorage.getItem("accessToken");
+  if (!token) {
+    throw new Error("No token found");
+  }
+
+  return {
+    headers: {
+      Authorization: token,
+    },
+  };
+};
+
 async function getDishes() {
   try {
     const response = await defaultAxiosInstance.get("dish");
@@ -46,7 +59,7 @@ async function getDishById(id: number) {
 
 async function deleteDish(id: number) {
   try {
-    const response = await defaultAxiosInstance.delete(`dish/${id}`);
+    const response = await defaultAxiosInstance.delete(`dish/${id}`, getAuthorizationToken());
     return response.data;
   } catch (error) {
     console.error("Error deleting dish:", error);
@@ -73,7 +86,7 @@ async function createDish(
       price,
       chefsChoice,
     };
-    const response = await defaultAxiosInstance.post(`dish`, data);
+    const response = await defaultAxiosInstance.post(`dish`, data, getAuthorizationToken());
     return response.data;
   } catch (error) {
     alert(error);
@@ -99,8 +112,7 @@ async function updateDish(
       price,
       chefsChoice,
     };
-
-    const response = await defaultAxiosInstance.put(`dish/${dishId}`, data);
+    const response = await defaultAxiosInstance.put(`dish/${dishId}`, data, getAuthorizationToken());
     return response.data;
   } catch (error) {
     alert(error);

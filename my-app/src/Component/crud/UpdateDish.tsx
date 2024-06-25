@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuService from "../../service/MenuService";
 import { useParams } from "react-router";
+import { Button, Typography } from "@mui/material";
+import Header from "../pages/Elements/Header";
 
 function UpdateDish() {
   const [dishId, setDishId] = useState("");
@@ -10,6 +12,26 @@ function UpdateDish() {
   const [region, setRegion] = useState("");
   const [price, setPrice] = useState("");
   const [chefsChoice, setChefsChoice] = useState("");
+  const { id } = useParams();
+
+
+  useEffect(() => {
+      const fetchDish = async () => {
+        try {
+          const dish = await MenuService.getDishById(Number(id));
+          setDishId(dish.dishId);
+          setDishName(dish.dishName);
+          setDescription(dish.description);
+          setImage(dish.imageLink);
+          setRegion(dish.region);
+          setPrice(dish.price);
+          setChefsChoice(dish.chefsChoice);
+        } catch (error) {
+          alert(error);
+        }
+      };
+      fetchDish();
+    }, [id]);
 
   async function handleUpdateDish() {
     try {
@@ -29,64 +51,65 @@ function UpdateDish() {
 
   return (
     <>
-      <h1>Update Dish</h1>
-      <label>
+    <Header />
+      <Typography variant="h1">Update Dish</Typography>
+      <Typography>
         Dish ID:
         <input
           type="text"
           value={dishId}
           onChange={(e) => setDishId(e.target.value)}
         />
-      </label>
-      <label>
+      </Typography>
+      <Typography>
         Dish Name:
         <input
           type="text"
           value={dishName}
           onChange={(e) => setDishName(e.target.value)}
         />
-      </label>
-      <label>
+      </Typography>
+      <Typography>
         Description:
         <input
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-      </label>
-      <label>
+      </Typography>
+      <Typography>
         Image:
         <input
           type="text"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
-      </label>
-      <label>
+      </Typography>
+      <Typography>
         Region:
         <input
           type="text"
           value={region}
           onChange={(e) => setRegion(e.target.value)}
         />
-      </label>
-      <label>
+      </Typography>
+      <Typography>
         Price:
         <input
           type="text"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
-      </label>
-      <label>
+      </Typography>
+      <Typography>
         Chefs Choice:
         <input
           type="text"
           value={chefsChoice}
           onChange={(e) => setChefsChoice(e.target.value)}
         />
-      </label>
-      <button onClick={handleUpdateDish}>Update Dish</button>
+      </Typography>
+      <Button onClick={handleUpdateDish}>Update Dish</Button>
     </>
   );
 }
