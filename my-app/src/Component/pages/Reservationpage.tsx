@@ -75,22 +75,19 @@ export default function ReservationPage() {
           <form>
             <div className="names">
               <div>
-                <p>First name</p>
+                
                 <TextField
                   id="outlined-multiline-flexible"
                   label="First name"
-                  label="First Name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
                 />
               </div>
               <div>
-                <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
                   label="Last name"
-                  label="Nigger"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
@@ -118,7 +115,6 @@ export default function ReservationPage() {
               />
             </div>
             <div className="tabletime">
-              <p>Time and Table</p>
               <TextField
                 select
                 label="Start Time"
@@ -162,7 +158,6 @@ export default function ReservationPage() {
             </div>
           
             <div>
-              <p>Special Requests</p>
               <Textarea
                 minRows={2}
                 placeholder="Type something..."
