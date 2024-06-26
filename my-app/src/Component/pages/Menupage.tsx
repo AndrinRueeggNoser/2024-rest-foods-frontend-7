@@ -119,6 +119,9 @@ function Menupage() {
                 <Typography variant="body2" color="text.secondary">
                   {item.description}
                 </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {item.price} CHF
+                </Typography>
                 <Button onClick={() => handleButtonClick(item)}>
                   See more
                 </Button>
