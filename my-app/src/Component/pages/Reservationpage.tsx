@@ -62,6 +62,8 @@ const tablenr = [
   { value: "Not Selected", label: "Not Selected" },
 ];
 
+
+
 export default function ReservationPage() {
   return (
     <>
@@ -154,9 +156,9 @@ export default function ReservationPage() {
                 label="End Time"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
-                InputLabelProps={{
+               InputLabelProps={{
                   style: { color: '#fff' },
-                }}
+                }} 
               >
                 {endtime.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -178,7 +180,6 @@ export default function ReservationPage() {
                   MenuProps: {
                     sx: {
                       '.MuiMenuItem-root': {
-                        color: 'white',
                       },
                     },
                   },
