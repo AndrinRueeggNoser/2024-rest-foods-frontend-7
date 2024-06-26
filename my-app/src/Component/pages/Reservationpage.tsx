@@ -62,48 +62,36 @@ const tablenr = [
   { value: "Not Selected", label: "Not Selected" },
 ];
 
-
-
 export default function ReservationPage() {
   return (
     <>
       <Header />
-
+   
       <div className="main-container">
         <div className="form-container">
-          <img className="wall" src={wall} alt="Reservated" />
+        <img className="wall" src={wall} alt="Reservated" />
           <h1 className="reservation">Reservation</h1>
-          <h2>Reserve a table</h2>
+          <h2>Reservate over mail</h2>
           <form>
             <div className="names">
               <div>
-                
+                <p>First name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="First Name"
-      
-
+                  label="First name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
-                  InputLabelProps={{
-                    style: { color: '#fff' },
-                  }}
                 />
               </div>
               <div>
+                <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-
-      
-         label="Last name"
+                  label="Last name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
-                  InputLabelProps={{
-                    style: { color: '#fff' },
-                  }}
-
                 />
               </div>
             </div>
@@ -111,37 +99,29 @@ export default function ReservationPage() {
               <p>Email</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="Email"
+                label="E-mail"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
-                InputLabelProps={{
-                  style: { color: '#fff' },
-                }}
               />
             </div>
             <div className="p">
               <p>Phone number</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="Phone Number"
+                label="Phone number"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
-                InputLabelProps={{
-                  style: { color: '#fff' },
-                }}
               />
             </div>
             <div className="tabletime">
+              <p>Time and Table</p>
               <TextField
                 select
                 label="Start Time"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
-                InputLabelProps={{
-                  style: { color: '#fff' },
-                }}
               >
                 {starttime.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -156,9 +136,6 @@ export default function ReservationPage() {
                 label="End Time"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
-               InputLabelProps={{
-                  style: { color: '#fff' },
-                }} 
               >
                 {endtime.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -173,17 +150,6 @@ export default function ReservationPage() {
                 label="Table Number"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
-                InputLabelProps={{
-                  style: { color: '#fff' },
-                }}
-                SelectProps={{
-                  MenuProps: {
-                    sx: {
-                      '.MuiMenuItem-root': {
-                      },
-                    },
-                  },
-                }}
               >
                 {tablenr.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -192,16 +158,17 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
-
+          
             <div>
+              <p>Special Requests</p>
               <Textarea
                 minRows={2}
                 placeholder="Type something..."
                 variant="outlined"
                 sx={{
-                  width: "100%",
+                  width: "100%", 
                   backgroundColor: "#043835",
-                  color: "white"
+                  color: "white" 
                 }}
               />
             </div>

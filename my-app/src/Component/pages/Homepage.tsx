@@ -2,9 +2,6 @@ import Header from "./Elements/Header";
 import Button from "@mui/material/Button";
 import worldfootball from "./worldfootball.png";
 import Footer from "./Elements/Footer";
-import React from "react";
-import Menupage from "./Menupage";
-import Aboutpage from "./Aboutpage";
 import earth from "./earth.gif";
 
 export default function HomePage() {
