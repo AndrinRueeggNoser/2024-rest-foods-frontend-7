@@ -51,6 +51,7 @@ function UpdateDish() {
 
   return (
     <>
+       <div className="dashboard-background">
     <Header />
       <Typography variant="h1">Update Dish</Typography>
       <Typography>
@@ -109,7 +110,8 @@ function UpdateDish() {
           onChange={(e) => setChefsChoice(e.target.value)}
         />
       </Typography>
-      <Button onClick={handleUpdateDish}>Update Dish</Button>
+        <Button onClick={handleUpdateDish}>Update Dish</Button>
+        </div>
     </>
   );
 }
