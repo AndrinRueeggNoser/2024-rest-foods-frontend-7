@@ -43,13 +43,13 @@ function ReservationPreview() {
               Name: {selectedReservation.firstName}
             </Typography>
             <Typography variant="body1">
-              Phone Number: {selectedReservation.lastName}
+              Last Name: {selectedReservation.lastName}
             </Typography>
             <Typography variant="body1">
-              Email: {selectedReservation.reservationTime}
+              Date: {selectedReservation.reservationTime}
             </Typography>
             <Typography variant="body1">
-              Date: {selectedReservation.personCount}
+              Person Count: {selectedReservation.personCount}
             </Typography>
           </div>
         ) : (
