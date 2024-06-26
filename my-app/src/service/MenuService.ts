@@ -11,16 +11,7 @@ import { defaultAxiosInstance } from "./MenuFetch";
 //    },
 //  };
 //};
-async function getUser() {
-   try {
-     const response = await defaultAxiosInstance.get("user");
-     console.log(response.data);
-     return response.data;
-   } catch (error) {
-     console.error("Error fetching users:", error);
-     throw error;
-   }
-}
+
 
 const getAuthorizationToken = () => {
   const token = localStorage.getItem("accessToken");
@@ -125,7 +116,6 @@ const MenuService = {
   getDishById,
   createDish,
   updateDish,
-  getUser,
 };
 
 export default MenuService;
