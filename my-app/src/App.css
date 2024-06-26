@@ -81,6 +81,7 @@
 body {
   background-color: #000000;
   color: white;
+  overflow-x: hidden!important;
 }
 
 .back-ground{
@@ -92,7 +93,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
+  
   margin-top: 100px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -162,6 +163,7 @@ h2 {
 .button {
   display: block;
   margin-top: 20px;
+  
 }
  
 /*sizes*/
@@ -200,7 +202,7 @@ h2 {
 /*about*/
  
 .about {
-  color: black;
+  color: rgb(255, 255, 255);
   display: inline-block;
   width: 50%;
   font-family: Arial, Helvetica, sans-serif;
@@ -578,5 +580,19 @@ font {
 }
 
 .dashcolor {
-  color: #ffffff;
+  color: #000000;
+}
+
+
+/* Abstand Karte*/
+.SpaceCard {
+  margin-left: 10%;
+}
+
+.dashboard-background {
+  background-color: #d1e7f4b5; 
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }

@@ -9,16 +9,16 @@ import React from "react";
 import wall from "./wall.png";
 
 const textFieldStyles = {
-  input: { color: "white" }, // Text color
+  input: { color: "white" }, 
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: "white", // Border color
+      borderColor: "white", 
     },
     "&:hover fieldset": {
-      borderColor: "white", // Border color on hover
+      borderColor: "white", 
     },
     "&.Mui-focused fieldset": {
-      borderColor: "white", // Border color when focused
+      borderColor: "white", 
     },
   },
 };
@@ -66,62 +66,72 @@ export default function ReservationPage() {
   return (
     <>
       <Header />
-   
+
       <div className="main-container">
         <div className="form-container">
-        <img className="wall" src={wall} alt="Reservated" />
+          <img className="wall" src={wall} alt="Reservated" />
           <h1 className="reservation">Reservation</h1>
-          <h2>Reservate over mail</h2>
+          <h2>Reserve a table</h2>
           <form>
             <div className="names">
               <div>
-                <p>First name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="First name"
+                  label="First Name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
+                  InputLabelProps={{
+                    style: { color: "#fff" },
+                  }}
                 />
               </div>
               <div>
-                <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
                   label="Last name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
+                  InputLabelProps={{
+                    style: { color: "#fff" },
+                  }}
                 />
               </div>
             </div>
             <div className="p margintop">
-              <p>Email</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="E-mail"
+                label="Email"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: "#fff" },
+                }}
               />
             </div>
             <div className="p">
-              <p>Phone number</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="Phone number"
+                label="Phone Number"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: "#fff" },
+                }}
               />
             </div>
             <div className="tabletime">
-              <p>Time and Table</p>
               <TextField
                 select
                 label="Start Time"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: "white" },
+                }}
               >
                 {starttime.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -130,12 +140,16 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
+            
             <div className="tabletime">
               <TextField
                 select
                 label="End Time"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: "#fff" },
+                }}
               >
                 {endtime.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -144,12 +158,25 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
+
             <div className="tabletime">
               <TextField
                 select
                 label="Table Number"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: "#fff" },
+                }}
+                SelectProps={{
+                  MenuProps: {
+                    sx: {
+                      ".MuiMenuItem-root": {
+                        
+                      },
+                    },
+                  },
+                }}
               >
                 {tablenr.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -158,22 +185,21 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
-          
+
             <div>
-              <p>Special Requests</p>
               <Textarea
                 minRows={2}
                 placeholder="Type something..."
                 variant="outlined"
                 sx={{
-                  width: "100%", 
+                  width: "100%",
                   backgroundColor: "#043835",
-                  color: "white" 
+                  color: "white",
                 }}
               />
             </div>
             <div>
-              <Button className="button">Submit</Button>
+            <Button style={{ color: "white" }}>Submit</Button>
             </div>
           </form>
         </div>

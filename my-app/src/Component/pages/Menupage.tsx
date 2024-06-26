@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -6,16 +5,13 @@ import {
   CardMedia,
   Grid,
   Typography,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
 } from "@mui/material";
 import Header from "./Elements/Header";
 import useMenu from "../../service/useMenu";
 import { useNavigate } from "react-router";
 import menu123 from "./menu123.png";
 import { MenuProps } from "../../MenuProps";
+import { useState, useEffect } from "react";
 import StarIcon from "@mui/icons-material/Star";
 
 function Menupage() {
@@ -24,22 +20,6 @@ function Menupage() {
   const [filteredDishes, setFilteredDishes] = useState<MenuProps[] | null>(
     null
   );
-  const [filterType, setFilterType] = useState("");
-
-  const handleFilterChange = (event) => {
-    const value = event.target.value;
-    setFilterType(value);
-
-    if (value === "price") {
-      const filtered = sortedMenu.filter((dish) => dish.price < 10);
-      setFilteredDishes(filtered);
-    } else if (value === "chefsChoice") {
-      const filtered = sortedMenu.filter((dish) => dish.chefsChoice);
-      setFilteredDishes(filtered);
-    } else {
-      setFilteredDishes(null);
-    }
-  };
 
   useEffect(() => {
     if (filteredDishes) {
@@ -53,51 +33,19 @@ function Menupage() {
 
   const sortedMenu = [...menu].sort((a, b) => b.chefsChoice - a.chefsChoice);
 
+  const handleFilter = () => {
+    const filtered = sortedMenu.filter((dish) => dish.price < 10);
+    setFilteredDishes(filtered);
+  };
+
   const dishesToDisplay = filteredDishes || sortedMenu;
 
   return (
     <>
       <Header />
-      <FormControl
-        variant="outlined"
-        fullWidth
-        sx={{
-          marginBottom: 2,
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "white",
-            },
-            "&:hover fieldset": {
-              borderColor: "white",
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "white",
-            },
-          },
-          "& .MuiInputLabel-root": {
-            color: "white",
-          },
-          "& .MuiInputLabel-root.Mui-focused": {
-            color: "white",
-          },
-          "& .MuiSelect-icon": {
-            color: "white",
-          },
-        }}
-      >
-        <InputLabel>Filter</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={filterType}
-          onChange={handleFilterChange}
-          label="Filter"
-        >
-          <MenuItem value="price">By Price (below 10 CHF)</MenuItem>
-          <MenuItem value="chefsChoice">Chef's Choice</MenuItem>
-          <MenuItem value="none">None</MenuItem>
-        </Select>
-      </FormControl>
+      <Button variant="contained" onClick={handleFilter}>
+        Filter
+      </Button>
       <img className="menu123" src={menu123} alt="Menu" />
       <Typography variant="h1" gutterBottom>
         Menu
@@ -105,7 +53,7 @@ function Menupage() {
       <Grid container spacing={2}>
         {dishesToDisplay.map((item, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card sx={{ maxWidth: 345, marginLeft: "12%" }}>
+           <Card sx={{ maxWidth: 345, marginLeft: '12%' }}>
               <CardMedia
                 sx={{ height: 140 }}
                 image={item.image}
@@ -118,9 +66,6 @@ function Menupage() {
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {item.description}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {item.price} CHF
                 </Typography>
                 <Button onClick={() => handleButtonClick(item)}>
                   See more
