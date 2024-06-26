@@ -70,6 +70,10 @@ export default function Dashboard() {
     navigate(`/update/${menuId}`);
   };
 
+  const handleNavigateToReservation = (reservationId: number) => {
+    navigate(`/reservation/${reservationId}`);
+  }
+
   return (
     <div className="back-ground">
       <Header />
@@ -143,42 +147,23 @@ export default function Dashboard() {
                 <TableCell>Reservations</TableCell>
                 <TableCell align="right">ID</TableCell>
                 <TableCell align="right">Actions</TableCell>
-                <TableCell align="right">
-                  <Button onClick={handleNavigateToAddDish}>add</Button>
-                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {reservation.map((reservations) => (
+              {reservation.map((reservations: any) => (
                 <TableRow key={reservations.reservationId}>
                   <TableCell component="th" scope="row">
-                    {reservations.reservationTime}
-                  </TableCell>
-                  <TableCell align="right">
                     {reservations.reservationId}
                   </TableCell>
+                  <TableCell align="right">{reservations.reservationId}</TableCell>
                   <TableCell align="right">
-                    <Button
-                      onClick={() => handleDeleteMenu(reservations.dishId)}
-                    >
-                      delete
-                    </Button>
-                    <Button
-                      onClick={() => handleNavigateToDish(reservations.dishId)}
-                    >
+                    <Button onClick={() => handleNavigateToReservation(reservations.reservationId)}>
                       preview
-                    </Button>
-
-                    <Button
-                      onClick={() =>
-                        handleNavigateToUpdateDish(reservations.dishId)
-                      }
-                    >
-                      update
                     </Button>
                   </TableCell>
                 </TableRow>
               ))}
+                
             </TableBody>
           </Table>
         </>

@@ -9,6 +9,7 @@ import Loginpage from "./Component/pages/Loginpage";
 import DishPreview from "./Component/crud/DishPreview";
 import AddDish from "./Component/crud/AddDish";
 import UpdateDish from "./Component/crud/UpdateDish";
+import ReservationPreview from "./Component/crud/ReservationPreview";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Loginpage />} />
           <Route path="/add" element={<AddDish />} />
           <Route path="/update/:id" element={<UpdateDish />} />
+          <Route path="/reservation/:id" element={<ReservationPreview />} />
         </Routes>
       </BrowserRouter>
     </>

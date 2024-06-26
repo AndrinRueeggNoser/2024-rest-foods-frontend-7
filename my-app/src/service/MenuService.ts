@@ -40,6 +40,16 @@ async function getReservation() {
   }
 }
 
+async function getReservationById(id: number) {
+  try {
+    const response = await defaultAxiosInstance.get(`reservation/${id}`, getAuthorizationToken());
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching reservation by ID:", error);
+    throw error;
+  }
+}
+
 async function getDishes() {
   try {
     const response = await defaultAxiosInstance.get("dish");
@@ -129,6 +139,7 @@ const MenuService = {
   createDish,
   updateDish,
   getReservation,
+  getReservationById,
 };
 
 export default MenuService;
