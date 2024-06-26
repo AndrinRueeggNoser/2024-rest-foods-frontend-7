@@ -71,7 +71,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="back-ground">
+    <div className="dashboard-background">
       <Header />
       <Typography variant="h1" gutterBottom>
         Dashboard
