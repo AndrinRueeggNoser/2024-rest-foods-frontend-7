@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Elements/Header";
 import {
   Button,
+  Tab,
   Table,
   TableBody,
   TableCell,
@@ -33,20 +34,18 @@ export default function Dashboard() {
     fetchDishes();
   }, []);
 
-  useEffect(() =>{
+  useEffect(() => {
     const fetchReservation = async () => {
       try {
         const reservationData = await MenuService.getReservation();
         setReservation(reservationData);
         console.log(reservation);
-        
-      } catch(error){
+      } catch (error) {
         console.log("Error");
-        
       }
-    }
+    };
     fetchReservation();
-  }, [])
+  }, []);
 
   const handleDeleteMenu = async (menuId: number) => {
     try {
@@ -72,7 +71,7 @@ export default function Dashboard() {
 
   const handleNavigateToReservation = (reservationId: number) => {
     navigate(`/reservation/${reservationId}`);
-  }
+  };
 
   return (
     <div className="dashboard-background">
@@ -134,13 +133,6 @@ export default function Dashboard() {
       </Typography>
       {localStorage.getItem("role") == "ADMIN" ? (
         <>
-          <div>
-            <Typography variant="h5">{}</Typography>
-            <Typography variant="body1">ID: {}</Typography>
-            <Typography variant="body1">Description: {}</Typography>
-            <Typography variant="body1">Price: {}</Typography>
-          </div>
-
           <Table>
             <TableHead>
               <TableRow>
@@ -155,15 +147,31 @@ export default function Dashboard() {
                   <TableCell component="th" scope="row">
                     {reservations.reservationId}
                   </TableCell>
-                  <TableCell align="right">{reservations.reservationId}</TableCell>
                   <TableCell align="right">
-                    <Button onClick={() => handleNavigateToReservation(reservations.reservationId)}>
+                    {reservations.reservationId}
+                  </TableCell>
+                  <TableCell align="right">
+                    {reservations.reservationDate}
+                  </TableCell>
+                  <TableCell align="right">
+                    {reservations.reservationTime}
+                  </TableCell>
+                  <TableCell align="right">
+                    {reservations.personCount}
+                  </TableCell>
+                  <TableCell align="right">{reservations.firstName}</TableCell>
+                  <TableCell align="right">{reservations.lastName}</TableCell>
+                  <TableCell align="right">
+                    <Button
+                      onClick={() =>
+                        handleNavigateToReservation(reservations.reservationId)
+                      }
+                    >
                       preview
                     </Button>
                   </TableCell>
                 </TableRow>
               ))}
-                
             </TableBody>
           </Table>
         </>
