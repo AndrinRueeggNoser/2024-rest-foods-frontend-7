@@ -43,7 +43,8 @@ function Header() {
           ) : (
             <Button
               className="button"
-              onClick={() => {localStorage.removeItem("role");
+              onClick={() => {localStorage.removeItem("role")
+                localStorage.removeItem("accessToken");
                 location.reload();
               }}
             >

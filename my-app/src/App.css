@@ -82,6 +82,10 @@ body {
   background-color: #000000;
   color: white;
 }
+
+.back-ground{
+  background-color: #90eee1;
+}
  
 /*reservation*/
 .main-container {
