@@ -66,32 +66,39 @@ export default function ReservationPage() {
   return (
     <>
       <Header />
-   
+
       <div className="main-container">
         <div className="form-container">
-        <img className="wall" src={wall} alt="Reservated" />
+          <img className="wall" src={wall} alt="Reservated" />
           <h1 className="reservation">Reservation</h1>
-          <h2>Reservate over mail</h2>
+          <h2>Reserve a table</h2>
           <form>
             <div className="names">
               <div>
                 <p>First name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="John"
+                  label="First Name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
+                  InputLabelProps={{
+                    style: { color: '#fff' },
+                  }}
                 />
               </div>
               <div>
                 <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="Doe"
+                  label="Last Name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
+                  InputLabelProps={{
+                    style: { color: '#fff' },
+                  }}
+
                 />
               </div>
             </div>
@@ -99,20 +106,26 @@ export default function ReservationPage() {
               <p>Email</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="johndoe@example.com"
+                label="Email"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: '#fff' },
+                }}
               />
             </div>
             <div className="p">
               <p>Phone Number</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="079 348 76 45"
+                label="Phone Number"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: '#fff' },
+                }}
               />
             </div>
             <div className="tabletime">
@@ -122,6 +135,9 @@ export default function ReservationPage() {
                 label="Start Time"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: '#fff' },
+                }}
               >
                 {starttime.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -136,6 +152,9 @@ export default function ReservationPage() {
                 label="End Time"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: '#fff' },
+                }}
               >
                 {endtime.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -150,6 +169,18 @@ export default function ReservationPage() {
                 label="Table Number"
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
+                InputLabelProps={{
+                  style: { color: '#fff' },
+                }}
+                SelectProps={{
+                  MenuProps: {
+                    sx: {
+                      '.MuiMenuItem-root': {
+                        color: 'white',
+                      },
+                    },
+                  },
+                }}
               >
                 {tablenr.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -158,7 +189,7 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
-          
+
             <div>
               <p>Special Requests</p>
               <Textarea
@@ -166,9 +197,9 @@ export default function ReservationPage() {
                 placeholder="Type something..."
                 variant="outlined"
                 sx={{
-                  width: "100%", 
+                  width: "100%",
                   backgroundColor: "#043835",
-                  color: "white" 
+                  color: "white"
                 }}
               />
             </div>
