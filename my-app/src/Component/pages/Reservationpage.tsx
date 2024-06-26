@@ -75,38 +75,31 @@ export default function ReservationPage() {
           <form>
             <div className="names">
               <div>
-                
                 <TextField
                   id="outlined-multiline-flexible"
                   label="First Name"
-      
-
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
                   InputLabelProps={{
-                    style: { color: '#fff' },
+                    style: { color: "#fff" },
                   }}
                 />
               </div>
               <div>
                 <TextField
                   id="outlined-multiline-flexible"
-
-      
-         label="Last name"
+                  label="Last name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
                   InputLabelProps={{
-                    style: { color: '#fff' },
+                    style: { color: "#fff" },
                   }}
-
                 />
               </div>
             </div>
             <div className="p margintop">
-              <p>Email</p>
               <TextField
                 id="outlined-multiline-flexible"
                 label="Email"
@@ -114,12 +107,11 @@ export default function ReservationPage() {
                 maxRows={1}
                 sx={{ width: "100%" }}
                 InputLabelProps={{
-                  style: { color: '#fff' },
+                  style: { color: "#fff" },
                 }}
               />
             </div>
             <div className="p">
-              <p>Phone number</p>
               <TextField
                 id="outlined-multiline-flexible"
                 label="Phone Number"
@@ -127,7 +119,7 @@ export default function ReservationPage() {
                 maxRows={1}
                 sx={{ width: "100%" }}
                 InputLabelProps={{
-                  style: { color: '#fff' },
+                  style: { color: "#fff" },
                 }}
               />
             </div>
@@ -138,7 +130,7 @@ export default function ReservationPage() {
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
                 InputLabelProps={{
-                  style: { color: '#fff' },
+                  style: { color: "white" },
                 }}
               >
                 {starttime.map((option) => (
@@ -148,6 +140,7 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
+            
             <div className="tabletime">
               <TextField
                 select
@@ -155,7 +148,7 @@ export default function ReservationPage() {
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
                 InputLabelProps={{
-                  style: { color: '#fff' },
+                  style: { color: "#fff" },
                 }}
               >
                 {endtime.map((option) => (
@@ -165,6 +158,7 @@ export default function ReservationPage() {
                 ))}
               </TextField>
             </div>
+
             <div className="tabletime">
               <TextField
                 select
@@ -172,13 +166,13 @@ export default function ReservationPage() {
                 defaultValue="Not Selected"
                 sx={{ width: "100%" }}
                 InputLabelProps={{
-                  style: { color: '#fff' },
+                  style: { color: "#fff" },
                 }}
                 SelectProps={{
                   MenuProps: {
                     sx: {
-                      '.MuiMenuItem-root': {
-                        color: 'white',
+                      ".MuiMenuItem-root": {
+                        color: "white",
                       },
                     },
                   },
@@ -200,7 +194,7 @@ export default function ReservationPage() {
                 sx={{
                   width: "100%",
                   backgroundColor: "#043835",
-                  color: "white"
+                  color: "white",
                 }}
               />
             </div>

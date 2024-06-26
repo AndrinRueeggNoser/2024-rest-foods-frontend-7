@@ -53,7 +53,7 @@ function Menupage() {
       <Grid container spacing={2}>
         {dishesToDisplay.map((item, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card sx={{ maxWidth: 345 }}>
+           <Card sx={{ maxWidth: 345, marginLeft: '12%' }}>
               <CardMedia
                 sx={{ height: 140 }}
                 image={item.image}

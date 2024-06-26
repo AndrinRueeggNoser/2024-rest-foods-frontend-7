@@ -56,11 +56,13 @@ export default function Dashboard() {
 
   return (
     <>
-      
+       <div className="dashboard-background">
       
         <Header />
         <Typography variant="h1" gutterBottom>
-          Dashboard
+          <div className="dashcolor">
+            Dashboard
+            </div>
         </Typography>
         {selectedDish && (
           <div>
@@ -108,7 +110,8 @@ export default function Dashboard() {
             ))}
           </TableBody>
         </Table>
-     
+     </div>
     </>
   );
+  
 }

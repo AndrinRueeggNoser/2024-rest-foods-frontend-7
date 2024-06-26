@@ -88,7 +88,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
+  
   margin-top: 100px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -574,5 +574,15 @@ font {
 }
 
 .dashcolor {
-  color: #ffffff;
+  color: #000000;
+}
+
+
+/* Abstand Karte*/
+.SpaceCard {
+  margin-left: 10%;
+}
+
+.dashboard-background {
+  background-color: #d1e7f4b5; 
 }
