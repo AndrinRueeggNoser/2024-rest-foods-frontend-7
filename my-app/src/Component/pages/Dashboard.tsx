@@ -56,52 +56,59 @@ export default function Dashboard() {
 
   return (
     <>
-      <Header />
-      <Typography variant="h1" gutterBottom>
-        Dashboard
-      </Typography>
-      {selectedDish && (
-        <div>
-          <Typography variant="h5">{selectedDish.dishName}</Typography>
-          <Typography variant="body1">ID: {selectedDish.dishId}</Typography>
-          <Typography variant="body1">
-            Description: {selectedDish.description}
-          </Typography>
-          <Typography variant="body1">Price: {selectedDish.price}</Typography>
-        </div>
-      )}
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Menu</TableCell>
-            <TableCell align="right">ID</TableCell>
-            <TableCell align="right">Actions</TableCell>
-            <TableCell align="right"><Button onClick={handleNavigateToAddDish}>add</Button></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {menu.map((menus: MenuProps) => (
-            <TableRow key={menus.dishId}>
-              <TableCell component="th" scope="row">
-                {menus.dishName}
-              </TableCell>
-              <TableCell align="right">{menus.dishId}</TableCell>
+      
+      
+        <Header />
+        <Typography variant="h1" gutterBottom>
+          Dashboard
+        </Typography>
+        {selectedDish && (
+          <div>
+            <Typography variant="h5">{selectedDish.dishName}</Typography>
+            <Typography variant="body1">ID: {selectedDish.dishId}</Typography>
+            <Typography variant="body1">
+              Description: {selectedDish.description}
+            </Typography>
+            <Typography variant="body1">Price: {selectedDish.price}</Typography>
+          </div>
+        )}
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Menu</TableCell>
+              <TableCell align="right">ID</TableCell>
+              <TableCell align="right">Actions</TableCell>
               <TableCell align="right">
-                <Button onClick={() => handleDeleteMenu(menus.dishId)}>
-                  delete
-                </Button>
-                <Button onClick={() => handleNavigateToDish(menus.dishId)}>
-                  preview
-                </Button>
-                
-              <Button onClick={() => handleNavigateToUpdateDish(menus.dishId)}>
-                  update
-                </Button>
+                <Button onClick={handleNavigateToAddDish}>add</Button>
               </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHead>
+          <TableBody>
+            {menu.map((menus: MenuProps) => (
+              <TableRow key={menus.dishId}>
+                <TableCell component="th" scope="row">
+                  {menus.dishName}
+                </TableCell>
+                <TableCell align="right">{menus.dishId}</TableCell>
+                <TableCell align="right">
+                  <Button onClick={() => handleDeleteMenu(menus.dishId)}>
+                    delete
+                  </Button>
+                  <Button onClick={() => handleNavigateToDish(menus.dishId)}>
+                    preview
+                  </Button>
+
+                  <Button
+                    onClick={() => handleNavigateToUpdateDish(menus.dishId)}
+                  >
+                    update
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+     
     </>
   );
 }

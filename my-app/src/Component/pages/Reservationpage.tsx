@@ -75,10 +75,12 @@ export default function ReservationPage() {
           <form>
             <div className="names">
               <div>
-                <p>First name</p>
+                
                 <TextField
                   id="outlined-multiline-flexible"
                   label="First Name"
+      
+
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
@@ -88,10 +90,11 @@ export default function ReservationPage() {
                 />
               </div>
               <div>
-                <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="Last Name"
+
+      
+         label="Last name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
@@ -116,7 +119,7 @@ export default function ReservationPage() {
               />
             </div>
             <div className="p">
-              <p>Phone Number</p>
+              <p>Phone number</p>
               <TextField
                 id="outlined-multiline-flexible"
                 label="Phone Number"
@@ -129,7 +132,6 @@ export default function ReservationPage() {
               />
             </div>
             <div className="tabletime">
-              <p>Time and Table</p>
               <TextField
                 select
                 label="Start Time"
@@ -191,7 +193,6 @@ export default function ReservationPage() {
             </div>
 
             <div>
-              <p>Special Requests</p>
               <Textarea
                 minRows={2}
                 placeholder="Type something..."
@@ -209,11 +210,11 @@ export default function ReservationPage() {
           </form>
         </div>
         <div className="contact-info">
-          <h2>Contact us in a different way</h2>
+          <h2>Contact us</h2>
           <p>Rest Foods</p>
-          <p>Number: '052 202 75 22'</p>
-          <p>E-Mail: restfoodszuerich@gmail.com</p>
-          <p>Standort: Hero Strasse 12</p>
+          <p>Number: 052 202 75 22</p>
+          <p>E-Mail: contact@restfoods.com</p>
+          <p>Standort: Herostrasse 12</p>
           <div className="tables">
             <img src={tables} alt="tables" />
           </div>
