@@ -75,7 +75,7 @@ export default function ReservationPage() {
           <form>
             <div className="names">
               <div>
-                <p>First name</p>
+                
                 <TextField
                   id="outlined-multiline-flexible"
                   label="First Name"
@@ -85,10 +85,9 @@ export default function ReservationPage() {
                 />
               </div>
               <div>
-                <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="Nigger"
+                  label="Last Name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
@@ -99,24 +98,22 @@ export default function ReservationPage() {
               <p>Email</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="johndoe@example.com"
+                label="Email"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
               />
             </div>
             <div className="p">
-              <p>Phone Number</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="079 348 76 45"
+                label="Phone Number"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
               />
             </div>
             <div className="tabletime">
-              <p>Time and Table</p>
               <TextField
                 select
                 label="Start Time"
@@ -160,7 +157,6 @@ export default function ReservationPage() {
             </div>
           
             <div>
-              <p>Special Requests</p>
               <Textarea
                 minRows={2}
                 placeholder="Type something..."
