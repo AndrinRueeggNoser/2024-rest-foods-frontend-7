@@ -6,7 +6,7 @@ import MenuService from "../../service/MenuService";
 import Header from "../pages/Elements/Header";
 
 function DishPreview() {
-  const [selectedDish, setSelectedDish] = useState<MenuProps>();
+  const [selectedDish, setSelectedDish] = useState<MenuProps | null>(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -31,16 +31,17 @@ function DishPreview() {
       <Typography variant="h1" gutterBottom>
         Dish Preview
       </Typography>
+
       {selectedDish ? (
-        <>
-          <Typography variant="h5">{selectedDish.image}</Typography>
+        <div key={selectedDish.dishId}>
+          <img src={selectedDish.image} style={{ width: "200px" }} alt="Dish" />
           <Typography variant="h5">{selectedDish.dishName}</Typography>
           <Typography variant="body1">ID: {selectedDish.dishId}</Typography>
           <Typography variant="body1">
             Description: {selectedDish.description}
           </Typography>
           <Typography variant="body1">Price: {selectedDish.price}</Typography>
-        </>
+        </div>
       ) : (
         <Typography variant="body1">Loading...</Typography>
       )}
