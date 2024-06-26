@@ -9,16 +9,16 @@ import React from "react";
 import wall from "./wall.png";
 
 const textFieldStyles = {
-  input: { color: "white" }, // Text color
+  input: { color: "white" }, 
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: "white", // Border color
+      borderColor: "white", 
     },
     "&:hover fieldset": {
-      borderColor: "white", // Border color on hover
+      borderColor: "white", 
     },
     "&.Mui-focused fieldset": {
-      borderColor: "white", // Border color when focused
+      borderColor: "white", 
     },
   },
 };
@@ -172,7 +172,7 @@ export default function ReservationPage() {
                   MenuProps: {
                     sx: {
                       ".MuiMenuItem-root": {
-                        color: "white",
+                        
                       },
                     },
                   },
@@ -199,7 +199,7 @@ export default function ReservationPage() {
               />
             </div>
             <div>
-              <Button className="button">Submit</Button>
+            <Button style={{ color: "white" }}>Submit</Button>
             </div>
           </form>
         </div>
