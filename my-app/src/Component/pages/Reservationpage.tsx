@@ -78,7 +78,7 @@ export default function ReservationPage() {
                 <p>First name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="John"
+                  label="First name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
@@ -88,7 +88,7 @@ export default function ReservationPage() {
                 <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="Doe"
+                  label="Last name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
@@ -99,17 +99,17 @@ export default function ReservationPage() {
               <p>Email</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="johndoe@example.com"
+                label="E-mail"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
               />
             </div>
             <div className="p">
-              <p>Phone Number</p>
+              <p>Phone number</p>
               <TextField
                 id="outlined-multiline-flexible"
-                label="079 348 76 45"
+                label="Phone number"
                 multiline
                 maxRows={1}
                 sx={{ width: "100%" }}
@@ -178,11 +178,11 @@ export default function ReservationPage() {
           </form>
         </div>
         <div className="contact-info">
-          <h2>Contact us in a different way</h2>
+          <h2>Contact us</h2>
           <p>Rest Foods</p>
-          <p>Number: '052 202 75 22'</p>
-          <p>E-Mail: restfoodszuerich@gmail.com</p>
-          <p>Standort: Hero Strasse 12</p>
+          <p>Number: 052 202 75 22</p>
+          <p>E-Mail: contact@restfoods.com</p>
+          <p>Standort: Herostrasse 12</p>
           <div className="tables">
             <img src={tables} alt="tables" />
           </div>
