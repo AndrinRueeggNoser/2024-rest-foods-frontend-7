@@ -43,6 +43,7 @@ function AddDish() {
 
   return (
     <>
+       <div className="dashboard-background">
       <Header />
       <Typography variant="h1" gutterBottom>
         Add Dish
@@ -103,7 +104,8 @@ function AddDish() {
           onChange={(e) => setChefsChoice(e.target.value)}
         />
       </Typography>
-      <Button onClick={handleAddDish}>Add Dish</Button>
+        <Button onClick={handleAddDish}>Add Dish</Button>
+        </div>
     </>
   );
 }

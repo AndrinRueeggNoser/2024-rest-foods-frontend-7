@@ -27,6 +27,7 @@ function DishPreview() {
 
   return (
     <>
+       <div className="dashboard-background">
       <Header />
       <Typography variant="h1" gutterBottom>
         Dish Preview
@@ -44,7 +45,8 @@ function DishPreview() {
         </div>
       ) : (
         <Typography variant="body1">Loading...</Typography>
-      )}
+        )}
+        </div>
     </>
   );
 }
