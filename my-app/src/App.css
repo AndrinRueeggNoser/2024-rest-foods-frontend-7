@@ -34,6 +34,18 @@
   z-index: -1;
 }
 
+.menu123 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 250vh;
+  background-color: transparent;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+
 
 
  
@@ -537,4 +549,8 @@ h2 {
 
 font {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashcolor {
+  color: #ffffff;
 }

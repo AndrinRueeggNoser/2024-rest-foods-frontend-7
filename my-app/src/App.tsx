@@ -9,7 +9,6 @@ import Loginpage from "./Component/pages/Loginpage";
 import DishPreview from "./Component/crud/DishPreview";
 import AddDish from "./Component/crud/AddDish";
 import UpdateDish from "./Component/crud/UpdateDish";
-import DishpreviewPage from "./Component/pages/DIshPreviewPage";
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
           <Route path="/login" element={<Loginpage />} />
           <Route path="/add" element={<AddDish />} />
           <Route path="/update/:id" element={<UpdateDish />} />
-          <Route path="/dishpreview/:id" element={<DishpreviewPage />} />
         </Routes>
       </BrowserRouter>
     </>

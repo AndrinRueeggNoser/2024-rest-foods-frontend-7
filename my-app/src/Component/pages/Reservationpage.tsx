@@ -78,7 +78,7 @@ export default function ReservationPage() {
                 <p>First name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="John"
+                  label="First Name"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
@@ -88,7 +88,7 @@ export default function ReservationPage() {
                 <p>Last name</p>
                 <TextField
                   id="outlined-multiline-flexible"
-                  label="Doe"
+                  label="Nigger"
                   multiline
                   maxRows={1}
                   sx={{ width: "100%" }}
