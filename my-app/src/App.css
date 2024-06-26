@@ -55,14 +55,17 @@
 }
 
 .menu123 {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; 
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 250vh;
+  width: 100vw; 
   background-color: transparent;
-  opacity: 0.9;
+  opacity: 0.5;
   z-index: -1;
+  background-size: cover; 
 }
 
 
