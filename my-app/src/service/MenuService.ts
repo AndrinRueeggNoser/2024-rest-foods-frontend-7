@@ -26,11 +26,23 @@ const getAuthorizationToken = () => {
   };
 };
 
+async function getReservation() {
+  try {
+    const response = await defaultAxiosInstance.get(
+      "reservation",
+      getAuthorizationToken()
+    );
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching reservations:", error);
+    throw error;
+  }
+}
+
 async function getDishes() {
   try {
     const response = await defaultAxiosInstance.get("dish");
-    console.log(response.data.dish);
-
     return response.data;
   } catch (error) {
     console.error("Error fetching dishes:", error);
@@ -116,6 +128,7 @@ const MenuService = {
   getDishById,
   createDish,
   updateDish,
+  getReservation,
 };
 
 export default MenuService;

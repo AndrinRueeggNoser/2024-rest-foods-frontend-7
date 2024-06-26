@@ -83,6 +83,10 @@ body {
   color: white;
   overflow-x: hidden!important;
 }
+
+.back-ground{
+  background-color: #90eee1;
+}
  
 /*reservation*/
 .main-container {
